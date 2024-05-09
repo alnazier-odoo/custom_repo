@@ -3,6 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="76c52b9e-f3d6-4619-8d7a-26e34eb9a26b" name="Changes" comment="[ADD] new module has name is project_mak">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mak_project/__manifest__.py" beforeDir="false" afterPath="$PROJECT_DIR$/mak_project/__manifest__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mak_project/models/action_items.py" beforeDir="false" afterPath="$PROJECT_DIR$/mak_project/models/action_items.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mak_project/models/action_stages.py" beforeDir="false" afterPath="$PROJECT_DIR$/mak_project/models/action_stages.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mak_project/models/action_tag.py" beforeDir="false" afterPath="$PROJECT_DIR$/mak_project/models/action_tag.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mak_project/models/mom.py" beforeDir="false" afterPath="$PROJECT_DIR$/mak_project/models/mom.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mak_project/security/ir.model.access.csv" beforeDir="false" afterPath="$PROJECT_DIR$/mak_project/security/ir.model.access.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mak_project/views/action_item_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mak_project/views/action_item_view.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mak_project/views/action_stages_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mak_project/views/action_stages_view.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mak_project/views/action_tag_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mak_project/views/action_tag_view.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mak_project/views/mom_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mak_project/views/mom_view.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,7 +101,14 @@
       <option name="project" value="LOCAL" />
       <updated>1715265741746</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="[ADD] new module has name is project_mak">
+      <created>1715267322819</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1715267322819</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

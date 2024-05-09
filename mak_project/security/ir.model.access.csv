@@ -1,4 +1,5 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_project_mom,access.project.mom,model_project_mom,,1,1,1,1
-access_project_action_items,access.project.action_items,model_project_action_items,,1,1,1,1
-access_project_action_tag,access.project.action_tag,model_project_action_tag,,1,1,1,1
+access_project_items,access.project.items,model_project_items,,1,1,1,1
+access_project_tag,access.project.tag,model_project_tag,,1,1,1,1
+access_project_stages,access.project.stages,model_project_stages,,1,1,1,1

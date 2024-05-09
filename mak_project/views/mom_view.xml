@@ -23,17 +23,18 @@
         <field name="arch" type="xml">
             <form>
                 <sheet>
-                    <group>
-                        <group>
-                            <field name="meeting_reference"/>
-                        </group>
-                    </group>
+                    <div class="oe_title">
+                        <label for="meeting_reference"/>
+                        <h1>
+                            <field name="meeting_reference" placeholder="Weekly Meeting"/>
+                        </h1>
+                    </div>
                     <group>
                         <group>
                             <field name="meeting_date"/>
                             <field name="time"/>
                             <field name="location"/>
-                            <field name="attendees"/>
+                            <field name="attendees" widget="many2many_tags"/>
                         </group>
                         <group>
                             <field name="project"/>
@@ -70,19 +71,10 @@
     </record>
 
 
-    <menuitem id="menu_project_root"
-              name="Project"
-              sequence="10"/>
-
-    <menuitem id="menu_mom_root"
-              name="Mom"
-              parent="menu_project_root"
-              sequence="10"/>
-
     <menuitem id="menu_mom"
               name="Mom"
-              parent="menu_mom_root"
+              parent="project.menu_main_pm"
               action="action_mom_project"
-              sequence="10"/>
+              sequence="2"/>
 
 </odoo>

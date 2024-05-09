@@ -17,6 +17,7 @@
         'views/mom_view.xml',
         'views/action_item_view.xml',
         'views/action_tag_view.xml',
+        'views/action_stages_view.xml',
     ],
     'demo': [],
     'installable': True,

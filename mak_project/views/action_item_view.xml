@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
     <record id="view_action_items_tree" model="ir.ui.view">
-        <field name="name">project.action_items.tree</field>
-        <field name="model">project.action_items</field>
+        <field name="name">project.items.tree</field>
+        <field name="model">project.items</field>
         <field name="arch" type="xml">
             <tree>
                 <field name="sequence"/>
@@ -19,8 +19,8 @@
 
 
     <record id="view_action_items_form" model="ir.ui.view">
-        <field name="name">project.action_items.form</field>
-        <field name="model">project.action_items</field>
+        <field name="name">project.items.form</field>
+        <field name="model">project.items</field>
         <field name="arch" type="xml">
             <form>
                 <sheet>
@@ -32,7 +32,7 @@
                             <field name="mom"/>
                         </group>
                         <group>
-                            <field name="action_party"/>
+                            <field name="action_party" widget="many2many_tags"/>
                             <field name="task"/>
                             <field name="company"/>
                         </group>
@@ -55,7 +55,7 @@
     <record id="action_action_items" model="ir.actions.act_window">
         <field name="name">Mom</field>
         <field name="type">ir.actions.act_window</field>
-        <field name="res_model">project.action_items</field>
+        <field name="res_model">project.items</field>
         <field name="view_mode">tree,form</field>
         <field name="context">{}</field>
         <field name="help" type="html">
@@ -66,15 +66,10 @@
     </record>
 
 
-    <menuitem id="menu_action_items_root"
-              name="Action Items"
-              parent="menu_project_root"
-              sequence="20"/>
-
     <menuitem id="menu_action_items"
               name="Action Items"
-              parent="menu_action_items_root"
+              parent="project.menu_main_pm"
               action="action_action_items"
-              sequence="10"/>
+              sequence="3"/>
 
 </odoo>

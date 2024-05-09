@@ -2,37 +2,32 @@
 <odoo>
 
     <record id="view_action_stages_tree" model="ir.ui.view">
-        <field name="name">project.action_stages.tree</field>
-        <field name="model">project.action_stages</field>
+        <field name="name">project.stages.tree</field>
+        <field name="model">project.stages</field>
         <field name="arch" type="xml">
-            <tree>
+            <tree string="Action Stages" editable="top" sample="1" multi_edit="1">
                 <field name="stage_name"/>
             </tree>
         </field>
     </record>
 
-    <record id="action_action_stages" model="ir.actions.act_window">
+    <record id="action_items_stages" model="ir.actions.act_window">
         <field name="name">Action Items Stages</field>
         <field name="type">ir.actions.act_window</field>
-        <field name="res_model">project.action_tag</field>
+        <field name="res_model">project.stages</field>
         <field name="view_mode">tree</field>
-        <field name="context">{}</field>
         <field name="help" type="html">
-            <p class="o_view_content_smiling_face">
-                Create your first Record!
+            <p class="oe_view_nocontent_create">
+                There is no record click here to add new Action Items Stages.
             </p>
         </field>
     </record>
 
-    <menuitem id="menu_action_items_stages_root"
-              name="Action Items Stages"
-              parent="menu_project_root"
-              sequence="40"/>
 
-    <menuitem id="menu_action_stages"
-              name="Action Items Stages"
-              parent="menu_action_items_stages_root"
-              action="action_action_stages"
-              sequence="10"/>
+    <menuitem name="Items Stages"
+              id="action_items_stages_menu"
+              parent="project.menu_projects_config"
+              action="action_items_stages"
+              sequence="650"/>
 
 </odoo>

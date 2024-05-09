@@ -10,7 +10,7 @@
     'depends': [
         'mail',
         'project',
-        'base',
+        'base'
     ],
     'data': [
         'security/ir.model.access.csv',

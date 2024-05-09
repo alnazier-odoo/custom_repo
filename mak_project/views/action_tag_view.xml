@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="view_project_action_tag_form" model="ir.ui.view">
+        <field name="name">project.action_tag.form</field>
+        <field name="model">project.action_tag</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group>
+                            <field name="color" widget="color_picker"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_action_tag_tree" model="ir.ui.view">
+        <field name="name">project.action_tag.tree</field>
+        <field name="model">project.action_tag</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="color" widget="color_picker"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_action_tag" model="ir.actions.act_window">
+        <field name="name">Action Items Tag</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">project.action_tag</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="o_view_content_smiling_face">
+                Create your first Record!
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="menu_action_items_tag_root"
+              name="Action Items Tag"
+              parent="menu_project_root"
+              sequence="30"/>
+
+    <menuitem id="menu_action_items_tag"
+              name="Action Items Tag"
+              parent="menu_action_items_root"
+              action="action_action_tag"
+              sequence="10"/>
+
+</odoo>

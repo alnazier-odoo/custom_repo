@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_mom_tree" model="ir.ui.view">
+        <field name="name">project.mom.tree</field>
+        <field name="model">project.mom</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="meeting_reference"/>
+                <field name="project" />
+                <field name="meeting_date"/>
+                <field name="time"/>
+                <field name="location"/>
+                <field name="attendees" widget="many2many_tags"/>
+                <field name="company"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <record id="view_mom_form" model="ir.ui.view">
+        <field name="name">project.mom.form</field>
+        <field name="model">project.mom</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="meeting_reference"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group>
+                            <field name="meeting_date"/>
+                            <field name="time"/>
+                            <field name="location"/>
+                            <field name="attendees"/>
+                        </group>
+                        <group>
+                            <field name="project"/>
+                            <field name="task"/>
+                            <field name="company"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group name="discussion_summary" string="Discussion Summary">
+                            <field name="discussion_summary"/>
+                        </group>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_mom_project" model="ir.actions.act_window">
+        <field name="name">Mom</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">project.mom</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="o_view_content_smiling_face">
+                Create your first Record!
+            </p>
+        </field>
+    </record>
+
+
+    <menuitem id="menu_project_root"
+              name="Project"
+              sequence="10"/>
+
+    <menuitem id="menu_mom_root"
+              name="Mom"
+              parent="menu_project_root"
+              sequence="10"/>
+
+    <menuitem id="menu_mom"
+              name="Mom"
+              parent="menu_mom_root"
+              action="action_mom_project"
+              sequence="10"/>
+
+</odoo>

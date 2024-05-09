@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="view_action_stages_tree" model="ir.ui.view">
+        <field name="name">project.action_stages.tree</field>
+        <field name="model">project.action_stages</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="stage_name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_action_stages" model="ir.actions.act_window">
+        <field name="name">Action Items Stages</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">project.action_tag</field>
+        <field name="view_mode">tree</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="o_view_content_smiling_face">
+                Create your first Record!
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="menu_action_items_stages_root"
+              name="Action Items Stages"
+              parent="menu_project_root"
+              sequence="40"/>
+
+    <menuitem id="menu_action_stages"
+              name="Action Items Stages"
+              parent="menu_action_items_stages_root"
+              action="action_action_stages"
+              sequence="10"/>
+
+</odoo>

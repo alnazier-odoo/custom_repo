@@ -6,7 +6,7 @@ class ProjectMom(models.Model):
     _inherit = ['mail.thread', 'mail.activity.mixin']
     _description = "Project Mom"
 
-    meeting_reference = fields.Char(string='Meeting Reference', translate=True, tracking=True)
+    meeting_reference = fields.Char(string='Meeting Reference', tracking=True)
     meeting_date = fields.Date(string="Meeting Date")
     time = fields.Char(string="Time")
     location = fields.Char(string='Location', tracking=True)

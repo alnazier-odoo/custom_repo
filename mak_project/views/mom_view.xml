@@ -53,7 +53,7 @@
                             <field name="discussion_summary"/>
                         </group>
                     </group>
-                    <notebook>
+                    <notebook editable="top" sample="1" multi_edit="1">
                         <page string="Action Items" name="action items">
                             <field name="action_items_ids" readonly="1">
                             </field>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+         <!-- Sequences for project.items -->
+        <record id="seq_project_items" model="ir.sequence">
+            <field name="name">Action Items Sequence</field>
+            <field name="code">project.items</field>
+            <field name="prefix">AI</field>
+            <field name="padding">4</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+                 <!-- Sequences for project.mom -->
+        <record id="seq_project_mom" model="ir.sequence">
+            <field name="name">Action Mom Sequence</field>
+            <field name="code">project.mom</field>
+            <field name="prefix">MR</field>
+            <field name="padding">4</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+    </data>
+</odoo>

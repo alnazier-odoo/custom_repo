@@ -4,15 +4,17 @@
         <field name="name">project.items.tree</field>
         <field name="model">project.items</field>
         <field name="arch" type="xml">
-            <tree>
-                <field name="sequence"/>
-                <field name="description"/>
-                <field name="project"/>
-                <field name="mom"/>
-                <field name="due_date"/>
-                <field name="task"/>
-                <field name="action_party"/>
-                <field name="company"/>
+            <tree sample="1">
+                <field name="sequence" optional="show"/>
+                <field name="name" optional="show"/>
+                <field name="description" optional="show"/>
+                <field name="project" optional="show"/>
+                <field name="mom" optional="show"/>
+                <field name="due_date" optional="show"/>
+                <field name="task" optional="show"/>
+                <field name="action_party" optional="show"
+                       widget="many2many_tags" options="{'color_field': 'color'}"/>
+                <field name="company" optional="show"/>
             </tree>
         </field>
     </record>
@@ -24,6 +26,16 @@
         <field name="arch" type="xml">
             <form>
                 <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="sequence" readonly="1"/>
+                        </h1>
+                    </div>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" placeholder="Name"/>
+                        </h1>
+                    </div>
                     <group>
                         <group>
                             <field name="due_date"/>
@@ -32,7 +44,8 @@
                             <field name="mom"/>
                         </group>
                         <group>
-                            <field name="action_party" widget="many2many_tags"/>
+                            <field name="action_party" widget="many2many_tags"
+                                   options="{'color_field':'color'}"/>
                             <field name="task"/>
                             <field name="company"/>
                         </group>
@@ -52,8 +65,44 @@
         </field>
     </record>
 
+<!--    <record id="view_action_items_kanban" model="ir.ui.view">-->
+<!--        <field name="name">project.items.kanban</field>-->
+<!--        <field name="model">project.items</field>-->
+<!--        <field name="arch" type="xml">-->
+<!--            <kanban>-->
+<!--                <field name="sequence"/>-->
+<!--                <field name="description"/>-->
+<!--                <field name="project"/>-->
+<!--                <field name="mom"/>-->
+<!--                <field name="due_date"/>-->
+<!--                <field name="task"/>-->
+<!--                <field name="action_party"/>-->
+<!--                <field name="company"/>-->
+<!--                <templates>-->
+<!--                    <t t-name="kanban-box">-->
+<!--                        <div t-attf-class="oe_kanban_global_click">-->
+<!--                            <div class="oe_kanban_details">-->
+<!--                                <ul>-->
+<!--                                    <li>-->
+<!--                                        <field name="project"/>-->
+<!--                                    </li>-->
+<!--                                    <li>-->
+<!--                                        <field name="description"/>-->
+<!--                                    </li>-->
+<!--                                    <li>-->
+<!--                                        <field name="due_date"/>-->
+<!--                                    </li>-->
+<!--                                </ul>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </t>-->
+<!--                </templates>-->
+<!--            </kanban>-->
+<!--        </field>-->
+<!--    </record>-->
+
     <record id="action_action_items" model="ir.actions.act_window">
-        <field name="name">Mom</field>
+        <field name="name">Action Items</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">project.items</field>
         <field name="view_mode">tree,form</field>

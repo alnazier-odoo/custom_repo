@@ -6,7 +6,7 @@
         <field name="model">project.stages</field>
         <field name="arch" type="xml">
             <tree string="Action Stages" editable="top" sample="1" multi_edit="1">
-                <field name="stage_name"/>
+                <field name="stage_name" optional="show"/>
             </tree>
         </field>
     </record>

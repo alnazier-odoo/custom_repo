@@ -4,18 +4,18 @@
         <field name="name">project.mom.tree</field>
         <field name="model">project.mom</field>
         <field name="arch" type="xml">
-            <tree>
-                <field name="meeting_reference"/>
-                <field name="project" />
-                <field name="meeting_date"/>
-                <field name="time"/>
-                <field name="location"/>
-                <field name="attendees" widget="many2many_tags"/>
-                <field name="company"/>
+            <tree sample="1">
+                <field name="reference" optional="show"/>
+                <field name="meeting_reference" optional="show"/>
+                <field name="project" optional="show"/>
+                <field name="meeting_date" optional="show"/>
+                <field name="time" optional="show"/>
+                <field name="location" optional="show"/>
+                <field name="attendees" widget="many2many_tags" optional="show"/>
+                <field name="company" optional="show"/>
             </tree>
         </field>
     </record>
-
 
     <record id="view_mom_form" model="ir.ui.view">
         <field name="name">project.mom.form</field>
@@ -23,6 +23,11 @@
         <field name="arch" type="xml">
             <form>
                 <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="reference" readonly="1"/>
+                        </h1>
+                    </div>
                     <div class="oe_title">
                         <label for="meeting_reference"/>
                         <h1>
@@ -34,7 +39,8 @@
                             <field name="meeting_date"/>
                             <field name="time"/>
                             <field name="location"/>
-                            <field name="attendees" widget="many2many_tags"/>
+                            <field name="attendees" widget="many2many_tags"
+                                   option="{'color_field':'color'}"/>
                         </group>
                         <group>
                             <field name="project"/>
@@ -47,6 +53,12 @@
                             <field name="discussion_summary"/>
                         </group>
                     </group>
+                    <notebook>
+                        <page string="Action Items" name="action items">
+                            <field name="action_items_ids" readonly="1">
+                            </field>
+                        </page>
+                    </notebook>
                 </sheet>
                 <div class="oe_chatter">
                     <field name="message_follower_ids"/>

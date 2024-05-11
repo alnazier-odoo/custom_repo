@@ -1,9 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="76c52b9e-f3d6-4619-8d7a-26e34eb9a26b" name="Changes" comment="[ADD] new module has name is project_mak">
+    <list default="true" id="76c52b9e-f3d6-4619-8d7a-26e34eb9a26b" name="Changes" comment="[Delete] parameter from pyhon file mom">
+      <change afterPath="$PROJECT_DIR$/mak_project/data/data.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mak_project/__manifest__.py" beforeDir="false" afterPath="$PROJECT_DIR$/mak_project/__manifest__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mak_project/models/action_items.py" beforeDir="false" afterPath="$PROJECT_DIR$/mak_project/models/action_items.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mak_project/models/action_stages.py" beforeDir="false" afterPath="$PROJECT_DIR$/mak_project/models/action_stages.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mak_project/models/mom.py" beforeDir="false" afterPath="$PROJECT_DIR$/mak_project/models/mom.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mak_project/views/action_item_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mak_project/views/action_item_view.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mak_project/views/action_stages_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mak_project/views/action_stages_view.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mak_project/views/action_tag_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mak_project/views/action_tag_view.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mak_project/views/mom_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mak_project/views/mom_view.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -154,7 +162,14 @@
       <option name="project" value="LOCAL" />
       <updated>1715291579408</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="[Delete] parameter from pyhon file mom">
+      <created>1715293323230</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1715293323230</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -182,6 +197,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="[ADD] add new files" />
     <MESSAGE value="[ADD] new module has name is project_mak" />
-    <option name="LAST_COMMIT_MESSAGE" value="[ADD] new module has name is project_mak" />
+    <MESSAGE value="[Delete] parameter from pyhon file mom" />
+    <option name="LAST_COMMIT_MESSAGE" value="[Delete] parameter from pyhon file mom" />
   </component>
 </project>

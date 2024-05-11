@@ -55,7 +55,7 @@
                     </group>
                     <notebook editable="top" sample="1" multi_edit="1">
                         <page string="Action Items" name="action items">
-                            <field name="action_items_ids" readonly="1">
+                            <field name="action_items_ids" readonly="0">
                             </field>
                         </page>
                     </notebook>

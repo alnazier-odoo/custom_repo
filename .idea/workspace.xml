@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="76c52b9e-f3d6-4619-8d7a-26e34eb9a26b" name="Changes" comment="[ADD] Tracking for mom file&#10;[ADD] Notebook for mom file&#10;[ADD] Sequence for mom and items files&#10;[Modified] Optional Tree View for All files&#10;[ADD] Icon for the module">
-      <change beforePath="$PROJECT_DIR$/mak_project/views/mom_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mak_project/views/mom_view.xml" afterDir="false" />
-    </list>
+    <list default="true" id="76c52b9e-f3d6-4619-8d7a-26e34eb9a26b" name="Changes" comment="[ADD] Tracking for mom file&#10;[ADD] Notebook for mom file&#10;[ADD] Sequence for mom and items files&#10;[Modified] Optional Tree View for All files&#10;[ADD] Icon for the module" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -167,7 +165,14 @@
       <option name="project" value="LOCAL" />
       <updated>1715412212558</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="[ADD] Tracking for mom file&#10;[ADD] Notebook for mom file&#10;[ADD] Sequence for mom and items files&#10;[Modified] Optional Tree View for All files&#10;[ADD] Icon for the module">
+      <created>1715412557576</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1715412557576</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">

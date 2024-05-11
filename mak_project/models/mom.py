@@ -19,6 +19,7 @@ class ProjectMom(models.Model):
     discussion_summary = fields.Text(string="Discussion Summary", tracking=True)
     attendees = fields.Many2many('res.partner', string="Attendees", tracking=True)
     action_items_ids = fields.One2many('project.items', 'mom', string="Action Items")
+    attachment = fields.Binary(string='Attachment', required=False)
 
     @api.model
     def create(self, vals):

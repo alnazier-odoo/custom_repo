@@ -40,7 +40,7 @@
                             <field name="time"/>
                             <field name="location"/>
                             <field name="attendees" widget="many2many_tags"
-                                   option="{'color_field':'color'}"/>
+                                   options="{'color_field':'color'}"/>
                         </group>
                         <group>
                             <field name="project"/>
@@ -48,22 +48,33 @@
                             <field name="company"/>
                         </group>
                     </group>
-                      <group name="discussion_summary" string="Discussion Summary">
-                            <field name="discussion_summary"/>
-                        </group>
+                    <group name="agenda_items" string="Agenda Items:">
+                        <field name="agenda"/>
+                    </group>
+                    <group>
+                    </group>
+                    <group name="discussion_summary" string="Discussion Summary">
+                        <field name="discussion_summary"/>
+                    </group>
                     <group>
                         <field name="action_items_ids">
-                                <tree editable="top">
-                                    <field name="sequence"  invisible="1"/>
-                                    <field name="description"/>
-                                    <field name="project"/>
-                                    <field name="mom"/>
-                                    <field name="due_date"/>
-                                    <field name="task"/>
-                                    <field name="action_party" widget="many2many_tags"/>
-                                    <field name="company"/>
-                                </tree>
-                            </field>
+                            <tree editable="top">
+                                <field name="sequence" optional="show" invisible="1"/>
+                                <field name="description" optional="show"/>
+                                <field name="project" optional="show"/>
+                                <field name="mom" optional="show"/>
+                                <field name="due_date" optional="show"/>
+                                <field name="task" optional="show"/>
+                                <field name="action_party" widget="many2many_tags"
+                                       options="{'color_field':'color'}"/>
+                                <field name="company"/>
+                            </tree>
+                        </field>
+                    </group>
+                    <group>
+                        <group>
+                            <field name="attachment"/>
+                        </group>
                     </group>
                 </sheet>
                 <div class="oe_chatter">

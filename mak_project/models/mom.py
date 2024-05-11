@@ -5,6 +5,7 @@ class ProjectMom(models.Model):
     _name = "project.mom"
     _inherit = ['mail.thread', 'mail.activity.mixin']
     _description = "Project Mom"
+    _rec_name = "meeting_reference"
 
     reference = fields.Char(string="ref", copy=False, required=True, default=lambda self: _('New'))
     meeting_reference = fields.Char(string='Meeting Reference', tracking=True)

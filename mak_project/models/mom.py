@@ -20,6 +20,7 @@ class ProjectMom(models.Model):
     attendees = fields.Many2many('res.partner', string="Attendees", tracking=True)
     action_items_ids = fields.One2many('project.items', 'mom', string="Action Items")
     attachment = fields.Binary(string='Attachment', required=False)
+    action_count = fields.Integer(string="action Count", compute='_compute_action_count')
 
     @api.model
     def create(self, vals):
@@ -30,4 +31,18 @@ class ProjectMom(models.Model):
         res = super(ProjectMom, self).create(vals)
         return res
 
+    def _compute_action_count(self):
+        for rec in self:
+            action_count = self.env['project.items'].search_count([('mom', '=', rec.id)])
+            rec.action_count = action_count
 
+    def action_view_items(self):
+        return {
+            'type': 'ir.actions.act_window',
+            'name': 'Action Items',
+            'res_model': 'project.items',
+            'view_mode': 'tree',
+            'domain': [('mom', '=', self.id)],
+            'context': {'default_mom': self.id},
+            'target': 'current',
+        }

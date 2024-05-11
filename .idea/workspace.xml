@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="76c52b9e-f3d6-4619-8d7a-26e34eb9a26b" name="Changes" comment="[ADD] Kanban view for action items file">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="76c52b9e-f3d6-4619-8d7a-26e34eb9a26b" name="Changes" comment="[ADD] count field in action items file&#10;[ADD] smart button in action items file">
       <change beforePath="$PROJECT_DIR$/mak_project/models/action_items.py" beforeDir="false" afterPath="$PROJECT_DIR$/mak_project/models/action_items.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mak_project/models/mom.py" beforeDir="false" afterPath="$PROJECT_DIR$/mak_project/models/mom.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mak_project/views/action_item_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mak_project/views/action_item_view.xml" afterDir="false" />
@@ -185,7 +184,14 @@
       <option name="project" value="LOCAL" />
       <updated>1715432384249</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="[ADD] count field in action items file&#10;[ADD] smart button in action items file">
+      <created>1715442584933</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1715442584933</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -216,6 +222,7 @@
     <MESSAGE value="[Delete] parameter from pyhon file mom" />
     <MESSAGE value="[ADD] Tracking for mom file&#10;[ADD] Notebook for mom file&#10;[ADD] Sequence for mom and items files&#10;[Modified] Optional Tree View for All files&#10;[ADD] Icon for the module" />
     <MESSAGE value="[ADD] Kanban view for action items file" />
-    <option name="LAST_COMMIT_MESSAGE" value="[ADD] Kanban view for action items file" />
+    <MESSAGE value="[ADD] count field in action items file&#10;[ADD] smart button in action items file" />
+    <option name="LAST_COMMIT_MESSAGE" value="[ADD] count field in action items file&#10;[ADD] smart button in action items file" />
   </component>
 </project>

@@ -16,7 +16,6 @@ class ProjectActionItems(models.Model):
     remark = fields.Text(string="Remark", tracking=True)
     description = fields.Text(string="Description", tracking=True)
     action_party = fields.Many2many('project.tag', string="Action Party", required=True, tracking=True)
-    mom_count = fields.Integer(string="Mom Count", compute='_compute_mom_count')
 
     @api.model
     def create(self, vals):
@@ -27,18 +26,4 @@ class ProjectActionItems(models.Model):
         res = super(ProjectActionItems, self).create(vals)
         return res
 
-    def _compute_mom_count(self):
-        for rec in self:
-            mom_count = self.env['project.mom'].search_count([('meeting_reference', '=', rec.id)])
-            rec.mom_count = mom_count
 
-    def action_view_mom(self):
-        return {
-            'type': 'ir.actions.act_window',
-            'name': 'Mom',
-            'res_model': 'project.mom',
-            'view_mode': 'tree,form',
-            'domain': [('meeting_reference', '=', self.id)],
-            'context': {'default_meeting_reference': self.id},
-            'target': 'current',
-        }

@@ -48,17 +48,23 @@
                             <field name="company"/>
                         </group>
                     </group>
-                    <group>
-                        <group name="discussion_summary" string="Discussion Summary">
+                      <group name="discussion_summary" string="Discussion Summary">
                             <field name="discussion_summary"/>
                         </group>
-                    </group>
-                    <notebook editable="top" sample="1" multi_edit="1">
-                        <page string="Action Items" name="action items">
-                            <field name="action_items_ids" readonly="0">
+                    <group>
+                        <field name="action_items_ids">
+                                <tree editable="top">
+                                    <field name="sequence"  invisible="1"/>
+                                    <field name="description"/>
+                                    <field name="project"/>
+                                    <field name="mom"/>
+                                    <field name="due_date"/>
+                                    <field name="task"/>
+                                    <field name="action_party" widget="many2many_tags"/>
+                                    <field name="company"/>
+                                </tree>
                             </field>
-                        </page>
-                    </notebook>
+                    </group>
                 </sheet>
                 <div class="oe_chatter">
                     <field name="message_follower_ids"/>

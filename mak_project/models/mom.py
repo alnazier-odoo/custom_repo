@@ -17,7 +17,7 @@ class ProjectMom(models.Model):
     agenda = fields.Text(string="Agenda", tracking=True)
     discussion_summary = fields.Text(string="Discussion Summary", tracking=True)
     attendees = fields.Many2many('res.partner', string="Attendees", tracking=True)
-    action_items_ids = fields.One2many('project.items', 'task', string="Action Items")
+    action_items_ids = fields.One2many('project.items', 'mom', string="Action Items")
 
     @api.model
     def create(self, vals):

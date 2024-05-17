@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <!--Purchase Report Action-->
+        <record id="action_ah_purchase_report" model="ir.actions.report">
+            <field name="name">Purchase Report</field>
+            <field name="model">purchase.report.wizard.ah</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">custom_purchase_wizard.ah_purchase_request_report_view</field>
+            <field name="report_file">custom_purchase_wizard.ah_purchase_request_report_view</field>
+            <field name="binding_model_id" ref="model_purchase_report_wizard_ah" />
+        </record>
+
+
+
+        <!--Report Purchase Request Template-->
+        <template id="ah_purchase_request_report_view">
+            <t t-call="web.html_container">
+                <t t-call="web.external_layout">
+                    <t class="page">
+                        <t t-if="filter_by == 'vendor'">
+                            <link rel="stylesheet" href="/ah_purchase_custom/static/src/css/style.css"/>
+                            <div class="oe_structure"/>
+                            <center>
+                                <b>
+                                    <h4 class="text-center" style="font-size: bold;font-family:'DroidArabicKufiBold';">تقرير طلبات المشتريات</h4>
+                                </b>
+                            </center>
+
+                            <br/>
+                            <t t-if="start_date and end_date">
+                                <center style="font-size: bold;font-family:'DroidArabicKufiBold';">
+                                    التاريخ من <span t-esc="start_date"/> – <span t-esc="end_date"/>
+
+                                </center>
+                                <br/>
+                                <t  t-foreach="person" t-as="man">
+                                    <center style="font-size: bold;font-family:'DroidArabicKufiBold';" dir="rtl">مندوب المبيــعات :<span t-esc="man['name']"/>
+                                    </center>
+                                </t>
+                            </t>
+                            <br/>
+                            <br/>
+                            <table  style="border-collapse: collapse;width: 100%;font-size: bold;font-family:'DroidArabicKufiBold';"  class="text-center">
+                                <thead>
+                                    <tr style="width:100%;font-size: bold;font-family:'DroidArabicKufiBold';background-color: #BDC2C8;color: black;padding:5pt;"  dir="ltr">
+                                        <th style="color: #161313;font-size:11px;" width="18.11%">إجمالي المبلغ</th>
+                                        <th style="color: #161313;font-size:11px;" width="11.11%" >الســعر المبدئي</th>
+                                        <th style="color: #161313;font-size:11px;" width="5.11%">الكمية</th>
+                                        <th style="color: #161313;font-size:11px;" width="11.11%">المــاده</th>
+                                        <th style="color: #161313;font-size:11px;" width="11.11%">رمز المــاده</th>
+                                        <th style="color: #161313;font-size:11px;" width="11.11%"> إســم طالب الشراء</th>
+                                        <th style="color: #161313;font-size:11px;" width="11.11%">تاريخ قبول الطلب</th>
+                                        <th style="color: #161313;font-size:11px;" width="14.11%">رقــم طـلب الشــراء</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="text-center">
+                                    <tr t-foreach="form" t-as="order" style="font-size:11px;">
+                                        <td>
+                                            <span t-esc="order['subtotal']"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="order['cost']"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="order['quantity']"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="order['product']"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="order['product_code']"/>
+                                        </td>
+
+                                        <td>
+                                            <span t-esc="order['partner']"/>
+
+                                        </td>
+                                        <td>
+                                            <span t-esc="order['date']"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="order['sequence']"/>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <br/>
+                            <br/>
+                            <br/>
+                        </t>
+                        <t t-if="filter_by == 'partner'">
+                            <link rel="stylesheet" href="/ah_purchase_custom/static/src/css/style.css"/>
+                            <div class="oe_structure"/>
+                            <center>
+                                <b>
+                                    <h4 class="text-center" style="font-size: bold;font-family:'DroidArabicKufiBold';">تقرير طلبات المشتريات</h4>
+                                </b>
+                            </center>
+
+                            <br/>
+                            <t t-if="start_date and end_date">
+                                <center style="font-size: bold;font-family:'DroidArabicKufiBold';">
+                                    التاريخ من <span t-esc="start_date"/> – <span t-esc="end_date"/>
+
+                                </center>
+                                <br/>
+                                <t  t-foreach="person" t-as="man">
+                                    <center style="font-size: bold;font-family:'DroidArabicKufiBold';" dir="rtl">مندوب المبيــعات :<span t-esc="man['name']"/>
+                                    </center>
+                                </t>
+                            </t>
+                            <br/>
+                            <br/>
+                            <table  style="border-collapse: collapse;width: 100%;font-size: bold;font-family:'DroidArabicKufiBold';"  class="text-center">
+                                <thead>
+                                    <tr style="width:100%;font-size: bold;font-family:'DroidArabicKufiBold';background-color: #BDC2C8;color: black;padding:5pt;"  dir="ltr">
+                                        <th style="color: #161313;font-size:11px;" width="18.11%">إجمالي المبلغ</th>
+                                        <th style="color: #161313;font-size:11px;" width="11.11%" >الســعر المبدئي</th>
+                                        <th style="color: #161313;font-size:11px;" width="5.11%">الكمية</th>
+                                        <th style="color: #161313;font-size:11px;" width="11.11%">المــاده</th>
+                                        <th style="color: #161313;font-size:11px;" width="11.11%">رمز المــاده</th>
+                                        <th style="color: #161313;font-size:11px;" width="11.11%"> إســم طالب الشراء</th>
+                                        <th style="color: #161313;font-size:11px;" width="11.11%">تاريخ قبول الطلب</th>
+                                        <th style="color: #161313;font-size:11px;" width="14.11%">رقــم طـلب الشــراء</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="text-center">
+                                    <tr t-foreach="form" t-as="order" style="font-size:11px;">
+                                        <td>
+                                            <span t-esc="order['subtotal']"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="order['cost']"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="order['quantity']"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="order['product']"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="order['product_code']"/>
+                                        </td>
+
+                                        <td>
+                                            <span t-esc="order['partner']"/>
+
+                                        </td>
+                                        <td>
+                                            <span t-esc="order['date']"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="order['sequence']"/>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <br/>
+                            <br/>
+                            <br/>
+                        </t>
+                        <t t-if="filter_by == 'duration'">
+                            <link rel="stylesheet" href="/ah_purchase_custom/static/src/css/style.css"/>
+                            <div class="oe_structure"/>
+                            <center>
+                                <b>
+                                    <h4 class="text-center" style="font-size: bold;font-family:'DroidArabicKufiBold';">تقرير طلبات المشتريات</h4>
+                                </b>
+                            </center>
+
+                            <br/>
+                            <t t-if="start_date and end_date">
+                                <center style="font-size: bold;font-family:'DroidArabicKufiBold';">
+                                    التاريخ من <span t-esc="start_date"/> – <span t-esc="end_date"/>
+
+                                </center>
+                                <br/>
+                                <t  t-foreach="person" t-as="man">
+                                    <center style="font-size: bold;font-family:'DroidArabicKufiBold';" dir="rtl">مندوب المبيــعات :<span t-esc="man['name']"/>
+                                    </center>
+                                </t>
+                            </t>
+                            <br/>
+                            <br/>
+                            <table  style="border-collapse: collapse;width: 100%;font-size: bold;font-family:'DroidArabicKufiBold';"  class="text-center">
+                                <thead>
+                                    <tr style="width:100%;font-size: bold;font-family:'DroidArabicKufiBold';background-color: #BDC2C8;color: black;padding:5pt;"  dir="ltr">
+                                        <th style="color: #161313;font-size:11px;" width="18.11%">إجمالي المبلغ</th>
+                                        <th style="color: #161313;font-size:11px;" width="11.11%" >الســعر المبدئي</th>
+                                        <th style="color: #161313;font-size:11px;" width="5.11%">الكمية</th>
+                                        <th style="color: #161313;font-size:11px;" width="11.11%">المــاده</th>
+                                        <th style="color: #161313;font-size:11px;" width="11.11%">رمز المــاده</th>
+                                        <th style="color: #161313;font-size:11px;" width="11.11%"> إســم طالب الشراء</th>
+                                        <th style="color: #161313;font-size:11px;" width="11.11%">تاريخ قبول الطلب</th>
+                                        <th style="color: #161313;font-size:11px;" width="14.11%">رقــم طـلب الشــراء</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="text-center">
+                                    <tr t-foreach="form" t-as="order" style="font-size:11px;">
+                                        <td>
+                                            <span t-esc="order['subtotal']"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="order['cost']"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="order['quantity']"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="order['product']"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="order['product_code']"/>
+                                        </td>
+
+                                        <td>
+                                            <span t-esc="order['partner']"/>
+
+                                        </td>
+                                        <td>
+                                            <span t-esc="order['date']"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="order['sequence']"/>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <br/>
+                            <br/>
+                            <br/>
+                        </t>
+                    </t>
+                </t>
+            </t>
+        </template>
+
+    </data>
+</odoo>

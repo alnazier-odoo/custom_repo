@@ -1,0 +1,26 @@
+.font{
+font-family:'traditional_arabic';;font-weight:100;font-size: 13px;
+}
+
+@font-face {
+	font-family: 'DroidArabicKufiBold';
+	src: url('/ah_purchase_custom/static/src/fonts/DroidKufi-Bold.ttf') format('truetype');
+	font-weight: bold;
+	font-style: normal;
+	  }
+
+@font-face {
+	font-family: 'DroidArabicKufiRegular';
+	src: url('/ah_purchase_custom/static/src/fonts/DroidKufi-Regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+.arabic{
+	font-family:DroidArabicKufiRegular !important;
+}
+
+table.cr-table tbody tr:last-child
+{
+    height:100%;
+}

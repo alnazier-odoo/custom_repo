@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Purchase Report Wizard View -->
+        <record id="ah_purchase_report_wizard_view_form" model="ir.ui.view">
+            <field name="name">ah.purchase.report.form.wizard.form</field>
+            <field name="model">purchase.report.wizard.ah</field>
+            <field name="arch" type="xml">
+                <form string="Purchase Reports">
+                    <group class="oe_title">
+                        <group>
+                            <field name="filter_by"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group>
+                            <field name="from_date"/>
+                        </group>
+                        <group>
+                            <field name="to_date"/>
+                        </group>
+                    </group>
+                    <group class="oe_title">
+                        <field name="partner_ids" widget="many2many_tags"  attrs="{'invisible': [('filter_by', '!=', 'partner')]}"/>
+                        <field name="suppliers" widget="many2many_tags"  attrs="{'invisible': [('filter_by', '!=', 'vendor')]}"/>
+                    </group>
+                    <footer>
+                        <button name="print_report" string="Print Report" type="object" class="btn-primary"/> Or
+                        <button string="Cancel" class="btn-secondary" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_ah_purchase_wizard_view" model="ir.actions.act_window">
+            <field name="name">Purchase Report</field>
+            <field name="res_model">purchase.report.wizard.ah</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+        <menuitem name="Purchase Reports"
+                  id="purchase_reports_wizard_main_menu"
+                  parent="purchase.purchase_report_main"
+                  action="action_ah_purchase_wizard_view"
+                  sequence="200"
+        />
+
+    </data>
+</odoo>

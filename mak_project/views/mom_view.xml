@@ -31,7 +31,7 @@
                                 icon="fa-star">
                                 <field name="action_count"/>
                         </button>
-                    </div>
+                    </div>act_window
                     <div class="oe_title">
                         <h1>
                             <field name="reference" readonly="1"/>
@@ -69,7 +69,7 @@
                     <group>
                         <field name="action_items_ids">
                             <tree editable="top">
-                                <field name="sequence" optional="show"/>
+                                <field name="sequence" invisible="1" optional="show"/>
                                 <field name="name" optional="show"/>
                                 <field name="description" optional="show"/>
                                 <field name="project" optional="show"/>

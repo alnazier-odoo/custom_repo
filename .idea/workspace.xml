@@ -1,23 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="76c52b9e-f3d6-4619-8d7a-26e34eb9a26b" name="Changes" comment="[ADD] Tracking for mom file&#10;[ADD] Notebook for mom file&#10;[ADD] Sequence for mom and items files&#10;[Modified] Optional Tree View for All files&#10;[ADD] Icon for the module">
-      <change afterPath="$PROJECT_DIR$/custom_purchase_wizard/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/custom_purchase_wizard/__manifest__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/custom_purchase_wizard/models/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/custom_purchase_wizard/models/purhase_order.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/custom_purchase_wizard/reports/reports_action_wizards.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/custom_purchase_wizard/security/ir.model.access.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/custom_purchase_wizard/static/src/css/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/custom_purchase_wizard/static/src/fonts/DroidKufi-Bold.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/custom_purchase_wizard/static/src/fonts/DroidKufi-Regular.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/custom_purchase_wizard/views/purchase_order.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/custom_purchase_wizard/wizards/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/custom_purchase_wizard/wizards/purchase_report_wizard.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/custom_purchase_wizard/wizards/purchase_report_wizard.xml" afterDir="false" />
+    <list default="true" id="76c52b9e-f3d6-4619-8d7a-26e34eb9a26b" name="Changes" comment="[ADD] count field in action items file&#10;[ADD] smart button in action items file">
+      <change afterPath="$PROJECT_DIR$/custom_sales_report/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_sales_report/__manifest__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_sales_report/models/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_sales_report/models/sale_order.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_sales_report/reports/report_sales_action_wizard_temp.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_sales_report/security/ir.model.access.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_sales_report/static/description/icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_sales_report/static/src/css/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_sales_report/static/src/fonts/DroidKufi-Bold.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_sales_report/static/src/fonts/DroidKufi-Regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_sales_report/views/sale_order_view.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_sales_report/wizards/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_sales_report/wizards/sales_report_wizard.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_sales_report/wizards/sales_report_wizard_view.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mak_project/models/sale.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mak_project/views/sale_view.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/custom_repo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/custom_repo.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/custom_purchase_wizard/__manifest__.py" beforeDir="false" afterPath="$PROJECT_DIR$/custom_purchase_wizard/__manifest__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/custom_purchase_wizard/reports/reports_action_wizards.xml" beforeDir="false" afterPath="$PROJECT_DIR$/custom_purchase_wizard/reports/reports_action_wizards.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/custom_purchase_wizard/wizards/purchase_report_wizard.py" beforeDir="false" afterPath="$PROJECT_DIR$/custom_purchase_wizard/wizards/purchase_report_wizard.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mak_project/__manifest__.py" beforeDir="false" afterPath="$PROJECT_DIR$/mak_project/__manifest__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mak_project/models/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/mak_project/models/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mak_project/views/mom_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mak_project/views/mom_view.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -28,8 +37,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="OdooModel" />
-        <option value="OdooViewEmpty" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -60,7 +68,9 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2gEYRGXqHan9zMCfusVoJMacPuX" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -68,19 +78,20 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "DefaultOdooModelFileTemplate": "OdooModel",
-    "DefaultOdooViewFileTemplate": "OdooViewEmpty",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "/home/nezo/Documents/custom_repo/custom_purchase_wizard",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+    "last_opened_file_path": "/media/almak/30c24138-a86e-4289-ace6-2b12a845651e/work/custom_repo/custom_sales_report",
+    "settings.editor.selected.configurable": "diff.base"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/custom_purchase_wizard" />
-      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/custom_sales_report" />
+      <recent name="$PROJECT_DIR$/custom_sales_report/wizards" />
+      <recent name="$PROJECT_DIR$/custom_sales_report/static/description" />
+      <recent name="$PROJECT_DIR$/custom_sales_report/static" />
+      <recent name="$PROJECT_DIR$/custom_sales_report/models" />
     </key>
   </component>
   <component name="RunManager">
@@ -91,13 +102,13 @@
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="/media/nezo/05AAEE251D727C271/Work/odoo_lib/contabo_docker_testing/bin/python" />
-      <option name="WORKING_DIRECTORY" value="/media/nezo/05AAEE251D727C271/Work/odoo/odoo16/odoo16" />
+      <option name="SDK_HOME" value="$PROJECT_DIR$/../../custom/venv/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../../custom/odoo16/odoo" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="/media/nezo/05AAEE251D727C271/Work/odoo/odoo16/odoo16/odoo-bin" />
-      <option name="PARAMETERS" value="-c /media/nezo/05AAEE251D727C271/Work/env/custom_repo.conf" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../../custom/odoo16/odoo/odoo-bin" />
+      <option name="PARAMETERS" value="-c $PROJECT_DIR$/../../env/my_project.conf" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -206,7 +217,21 @@
       <option name="project" value="LOCAL" />
       <updated>1715412557576</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="[ADD] Kanban view for action items file">
+      <created>1715432384249</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1715432384249</updated>
+    </task>
+    <task id="LOCAL-00015" summary="[ADD] count field in action items file&#10;[ADD] smart button in action items file">
+      <created>1715442584933</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1715442584933</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -236,6 +261,8 @@
     <MESSAGE value="[ADD] new module has name is project_mak" />
     <MESSAGE value="[Delete] parameter from pyhon file mom" />
     <MESSAGE value="[ADD] Tracking for mom file&#10;[ADD] Notebook for mom file&#10;[ADD] Sequence for mom and items files&#10;[Modified] Optional Tree View for All files&#10;[ADD] Icon for the module" />
-    <option name="LAST_COMMIT_MESSAGE" value="[ADD] Tracking for mom file&#10;[ADD] Notebook for mom file&#10;[ADD] Sequence for mom and items files&#10;[Modified] Optional Tree View for All files&#10;[ADD] Icon for the module" />
+    <MESSAGE value="[ADD] Kanban view for action items file" />
+    <MESSAGE value="[ADD] count field in action items file&#10;[ADD] smart button in action items file" />
+    <option name="LAST_COMMIT_MESSAGE" value="[ADD] count field in action items file&#10;[ADD] smart button in action items file" />
   </component>
 </project>

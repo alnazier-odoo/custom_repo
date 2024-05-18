@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 # Part of Odoo. See LICENSE file for full copyright and licensing details.
 {
-    'name': 'custom purchase report wizard',
+    'name': 'custom purchase report wizards',
     'version': '16.0.0',
     'summary': 'Control Monitors',
-    'sequence': -100,
+    'sequence': 100,
     'description': """""",
     'category': '',
     'depends': ['purchase', 'base'

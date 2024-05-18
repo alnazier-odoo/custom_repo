@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Sales Report Wizard View -->
+        <record id="sales_report_wizards_view_form" model="ir.ui.view">
+            <field name="name">sales.report.wizards.view.form</field>
+            <field name="model">sales.report.wizards</field>
+            <field name="arch" type="xml">
+                <form string="Sales Reports">
+                    <group class="oe_title">
+                        <group>
+                            <field name="filter_by"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group>
+                            <field name="from_date"/>
+                        </group>
+                        <group>
+                            <field name="to_date"/>
+                        </group>
+                    </group>
+                    <group class="oe_title">
+                        <field name="saleperson" widget="many2many_tags"  attrs="{'invisible': [('filter_by', '!=', 'user_id')]}"/>
+                        <field name="customer" widget="many2many_tags"  attrs="{'invisible': [('filter_by', '!=', 'partner_id')]}"/>
+                    </group>
+                    <footer>
+                        <button name="print_report" string="Print Report" type="object" class="btn-primary"/>
+                        <button string="Cancel" class="btn-secondary" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+                <!-- Sales Report Wizard Action -->
+        <record id="action_sales_report_wizards_view" model="ir.actions.act_window">
+            <field name="name">Sales Report</field>
+            <field name="res_model">sales.report.wizards</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+        <menuitem name="Sales Report"
+                  id="sales_report_wizards_main_menu"
+                  parent="sale.sale_menu_root"
+                  action="action_sales_report_wizards_view"
+                  sequence="45"
+        />
+
+    </data>
+</odoo>

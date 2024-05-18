@@ -1,26 +1,22 @@
 # -*- coding: utf-8 -*-
 # Part of Odoo. See LICENSE file for full copyright and licensing details.
 {
-    'name': 'Project Screen',
+    'name': 'Custom Sales Report',
     'version': '16.0.0',
-    'summary': 'Control Monitors',
+    'summary': 'Print Sales Reports',
     'sequence': -100,
-    'description': """Project Manager Control""",
+    'description': """Print reports for sales operations by the date, salepersons, and customers""",
     'category': '',
     'depends': [
-        'mail',
-        'project',
-        'base',
-        'sale'
+        'sale',
+        'base'
     ],
     'data': [
         'security/ir.model.access.csv',
-        'data/data.xml',
-        'views/mom_view.xml',
-        'views/action_item_view.xml',
-        'views/action_tag_view.xml',
-        'views/action_stages_view.xml',
-        'views/sale_view.xml',
+        'wizards/sales_report_wizard_view.xml',
+        'views/sale_order_view.xml',
+        'reports/report_sales_action_wizard_temp.xml',
+
     ],
     'demo': [],
     'installable': True,

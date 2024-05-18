@@ -2,29 +2,29 @@
 <odoo>
     <data>
 
-        <!--Purchase Report Action-->
-        <record id="action_ah_purchase_report" model="ir.actions.report">
-            <field name="name">Purchase Report</field>
-            <field name="model">purchase.report.wizard.ah</field>
+        <!--Sales Report Action-->
+        <record id="action_sales_report" model="ir.actions.report">
+            <field name="name">Sales Report</field>
+            <field name="model">sales.report.wizards</field>
             <field name="report_type">qweb-pdf</field>
-            <field name="report_name">custom_purchase_wizard.ah_purchase_request_report_view</field>
-            <field name="report_file">custom_purchase_wizard.ah_purchase_request_report_view</field>
-            <field name="binding_model_id" ref="model_purchase_report_wizard_ah" />
+            <field name="report_name">custom_sales_report.sales_request_report_view</field>
+            <field name="report_file">custom_sales_report.sales_request_report_view</field>
+            <field name="binding_model_id" ref="model_sales_report_wizards" />
         </record>
 
 
 
-        <!--Report Purchase Request Template-->
-        <template id="ah_purchase_request_report_view">
+        <!--Report Sales Request Template-->
+        <template id="sales_request_report_view">
             <t t-call="web.html_container">
                 <t t-call="web.external_layout">
                     <t class="page">
-                        <t t-if="filter_by == 'vendor'">
-                            <link rel="stylesheet" href="/ah_purchase_custom/static/src/css/style.css"/>
+                        <t t-if="filter_by == 'partner_id'">
+                            <link rel="stylesheet" href="/custom_sales_report/static/src/css/style.css"/>
                             <div class="oe_structure"/>
                             <center>
                                 <b>
-                                    <h4 class="text-center" style="font-size: bold;font-family:'DroidArabicKufiBold';">تقرير طلبات المشتريات </h4>
+                                    <h4 class="text-center" style="font-size: bold;font-family:'DroidArabicKufiBold';">تقرير المبيعات</h4>
                                 </b>
                             </center>
 
@@ -36,7 +36,7 @@
                                 </center>
                                 <br/>
                                 <t  t-foreach="person" t-as="man">
-                                    <center style="font-size: bold;font-family:'DroidArabicKufiBold';" dir="rtl"> مندوب المبيــعات :<span t-esc="man['name']"/>
+                                    <center style="font-size: bold;font-family:'DroidArabicKufiBold';" dir="rtl">الزبون:<span t-esc="man['name']"/>
                                     </center>
                                 </t>
                             </t>
@@ -46,13 +46,12 @@
                                 <thead>
                                     <tr style="width:100%;font-size: bold;font-family:'DroidArabicKufiBold';background-color: #BDC2C8;color: black;padding:5pt;"  dir="ltr">
                                         <th style="color: #161313;font-size:11px;" width="18.11%">إجمالي المبلغ</th>
-                                        <th style="color: #161313;font-size:11px;" width="11.11%" >الســعر المبدئي</th>
+                                        <th style="color: #161313;font-size:11px;" width="11.11%" >سعر القطعة</th>
                                         <th style="color: #161313;font-size:11px;" width="5.11%">الكمية</th>
-                                        <th style="color: #161313;font-size:11px;" width="11.11%">المــاده</th>
-                                        <th style="color: #161313;font-size:11px;" width="11.11%">رمز المــاده</th>
-                                        <th style="color: #161313;font-size:11px;" width="11.11%"> إســم طالب الشراء</th>
-                                        <th style="color: #161313;font-size:11px;" width="11.11%">تاريخ قبول الطلب</th>
-                                        <th style="color: #161313;font-size:11px;" width="14.11%">رقــم طـلب الشــراء</th>
+                                        <th style="color: #161313;font-size:11px;" width="11.11%">المنتج</th>
+                                        <th style="color: #161313;font-size:11px;" width="11.11%">اســم مندوب المبيعات</th>
+                                        <th style="color: #161313;font-size:11px;" width="11.11%">تاريخ البيع</th>
+                                        <th style="color: #161313;font-size:11px;" width="14.11%">رقــم عملية البيع</th>
                                     </tr>
                                 </thead>
                                 <tbody class="text-center">
@@ -70,10 +69,6 @@
                                             <span t-esc="order['product']"/>
                                         </td>
                                         <td>
-                                            <span t-esc="order['product_code']"/>
-                                        </td>
-
-                                        <td>
                                             <span t-esc="order['partner']"/>
 
                                         </td>
@@ -90,12 +85,12 @@
                             <br/>
                             <br/>
                         </t>
-                        <t t-if="filter_by == 'partner'">
+                        <t t-if="filter_by == 'user_id'">
                             <link rel="stylesheet" href="/ah_purchase_custom/static/src/css/style.css"/>
                             <div class="oe_structure"/>
                             <center>
                                 <b>
-                                    <h4 class="text-center" style="font-size: bold;font-family:'DroidArabicKufiBold';">تقرير طلبات المشتريات</h4>
+                                    <h4 class="text-center" style="font-size: bold;font-family:'DroidArabicKufiBold';">تقرير المبيعات</h4>
                                 </b>
                             </center>
 
@@ -117,13 +112,12 @@
                                 <thead>
                                     <tr style="width:100%;font-size: bold;font-family:'DroidArabicKufiBold';background-color: #BDC2C8;color: black;padding:5pt;"  dir="ltr">
                                         <th style="color: #161313;font-size:11px;" width="18.11%">إجمالي المبلغ</th>
-                                        <th style="color: #161313;font-size:11px;" width="11.11%" >الســعر المبدئي</th>
+                                        <th style="color: #161313;font-size:11px;" width="11.11%" >سعر القطعة</th>
                                         <th style="color: #161313;font-size:11px;" width="5.11%">الكمية</th>
-                                        <th style="color: #161313;font-size:11px;" width="11.11%">المــاده</th>
-                                        <th style="color: #161313;font-size:11px;" width="11.11%">رمز المــاده</th>
-                                        <th style="color: #161313;font-size:11px;" width="11.11%"> إســم طالب الشراء</th>
-                                        <th style="color: #161313;font-size:11px;" width="11.11%">تاريخ قبول الطلب</th>
-                                        <th style="color: #161313;font-size:11px;" width="14.11%">رقــم طـلب الشــراء</th>
+                                        <th style="color: #161313;font-size:11px;" width="11.11%">المنتج</th>
+                                        <th style="color: #161313;font-size:11px;" width="11.11%">اســم مندوب المبيعات</th>
+                                        <th style="color: #161313;font-size:11px;" width="11.11%">تاريخ البيع</th>
+                                        <th style="color: #161313;font-size:11px;" width="14.11%">رقــم عملية البيع</th>
                                     </tr>
                                 </thead>
                                 <tbody class="text-center">
@@ -140,10 +134,6 @@
                                         <td>
                                             <span t-esc="order['product']"/>
                                         </td>
-                                        <td>
-                                            <span t-esc="order['product_code']"/>
-                                        </td>
-
                                         <td>
                                             <span t-esc="order['partner']"/>
 
@@ -166,7 +156,7 @@
                             <div class="oe_structure"/>
                             <center>
                                 <b>
-                                    <h4 class="text-center" style="font-size: bold;font-family:'DroidArabicKufiBold';">تقرير طلبات المشتريات</h4>
+                                    <h4 class="text-center" style="font-size: bold;font-family:'DroidArabicKufiBold';">تقرير المبيعات</h4>
                                 </b>
                             </center>
 
@@ -177,10 +167,10 @@
 
                                 </center>
                                 <br/>
-                                <t  t-foreach="person" t-as="man">
-                                    <center style="font-size: bold;font-family:'DroidArabicKufiBold';" dir="rtl">مندوب المبيــعات :<span t-esc="man['name']"/>
-                                    </center>
-                                </t>
+<!--                                <t  t-foreach="person" t-as="man">-->
+<!--                                    <center style="font-size: bold;font-family:'DroidArabicKufiBold';" dir="rtl">مندوب المبيــعات :<span t-esc="man['name']"/>-->
+<!--                                    </center>-->
+<!--                                </t>-->
                             </t>
                             <br/>
                             <br/>
@@ -188,13 +178,12 @@
                                 <thead>
                                     <tr style="width:100%;font-size: bold;font-family:'DroidArabicKufiBold';background-color: #BDC2C8;color: black;padding:5pt;"  dir="ltr">
                                         <th style="color: #161313;font-size:11px;" width="18.11%">إجمالي المبلغ</th>
-                                        <th style="color: #161313;font-size:11px;" width="11.11%" >الســعر المبدئي</th>
+                                        <th style="color: #161313;font-size:11px;" width="11.11%" >سعر القطعة</th>
                                         <th style="color: #161313;font-size:11px;" width="5.11%">الكمية</th>
-                                        <th style="color: #161313;font-size:11px;" width="11.11%">المــاده</th>
-                                        <th style="color: #161313;font-size:11px;" width="11.11%">رمز المــاده</th>
-                                        <th style="color: #161313;font-size:11px;" width="11.11%"> إســم طالب الشراء</th>
-                                        <th style="color: #161313;font-size:11px;" width="11.11%">تاريخ قبول الطلب</th>
-                                        <th style="color: #161313;font-size:11px;" width="14.11%">رقــم طـلب الشــراء</th>
+                                        <th style="color: #161313;font-size:11px;" width="11.11%">المنتج</th>
+                                        <th style="color: #161313;font-size:11px;" width="11.11%">اســم مندوب المبيعات</th>
+                                        <th style="color: #161313;font-size:11px;" width="11.11%">تاريخ البيع</th>
+                                        <th style="color: #161313;font-size:11px;" width="14.11%">رقــم عملية البيع</th>
                                     </tr>
                                 </thead>
                                 <tbody class="text-center">
@@ -211,10 +200,6 @@
                                         <td>
                                             <span t-esc="order['product']"/>
                                         </td>
-                                        <td>
-                                            <span t-esc="order['product_code']"/>
-                                        </td>
-
                                         <td>
                                             <span t-esc="order['partner']"/>
 

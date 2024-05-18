@@ -1,11 +1,8 @@
-from odoo import fields, models, api,_
-import time
-from datetime import datetime, timedelta
-
+from odoo import fields, models, api, _
 
 
 class PurchaseWizard(models.Model):
-    _name = 'purchase.report.wizard.ah'
+    _name = 'purchase.report.wizards.ah'
     _description = 'Purchase Report Features'
 
     from_date = fields.Date(
@@ -55,7 +52,7 @@ class PurchaseWizard(models.Model):
                 purchase = self.env['purchase.order'].search(
                     [('partner_id', '=', vendor.id)])
                 for so in purchase:
-                    if so.convert_date >= self.from_date and so.convert_date <= self.to_date:
+                    if self.from_date <= so.convert_date <= self.to_date:
                         for lines in so.order_line:
                             res = {
                                 'sequence': so.name,
@@ -73,7 +70,7 @@ class PurchaseWizard(models.Model):
 
             datas = {
                 'ids': self,
-                'model': 'purchase.report.wizard.ah',
+                'model': 'purchase.report.wizards.ah',
                 'form': result,
                 'person': self.get_supplier_report(),
                 'start_date': self.from_date,
@@ -90,7 +87,7 @@ class PurchaseWizard(models.Model):
                 purchase = self.env['purchase.order'].search(
                     [('user_id', '=', vendor.id), ])
                 for so in purchase:
-                    if so.convert_date >= self.from_date and so.convert_date <= self.to_date:
+                    if self.from_date <= so.convert_date <= self.to_date:
                         for lines in so.order_line:
                             res = {
                                 'sequence': so.name,
@@ -107,7 +104,7 @@ class PurchaseWizard(models.Model):
                             result.append(res)
             datas = {
                 'ids': self,
-                'model': 'purchase.report.wizard.ah',
+                'model': 'purchase.report.wizards.ah',
                 'form': result,
                 'person': self.get_person_report(),
                 'start_date': self.from_date,
@@ -138,7 +135,7 @@ class PurchaseWizard(models.Model):
 
             datas = {
                 'ids': self,
-                'model': 'purchase.report.wizard.ah',
+                'model': 'purchase.report.wizards.ah',
                 'form': result,
                 'person': self.get_person_report(),
                 'start_date': self.from_date,

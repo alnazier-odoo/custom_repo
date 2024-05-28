@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="site_visits_form_view" model="ir.ui.view">
+            <field name="name">Site Visits</field>
+            <field name="model">site.visits</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <field name="stage_id" widget="statusbar" options="{'clickable': '1'}"/>
+                    </header>
+                    <sheet string="Site Visits">
+                        <field name="kanban_state" widget="state_selection"/>
+                        <group>
+                            <group>
+                                <field name="buyer_id"/>
+                                <field name="visit_date"/>
+                                <field name="visit_status"/>
+                                <field name="gate_pass"/>
+                                <field name="request_date"/>
+                                <field name="issuance_date"/>
+                            </group>
+                            <group>
+                                <field name="auctions_id"/>
+                                <field name="company_id"/>
+                                <field name="sale_focal_point"/>
+                                <field name="technical_focal_point"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="VISITORS">
+                                    <field name="site_visit_line">
+                                        <tree editable="top" sample="1" multi_edit="1">
+                                            <field name="sequence" widget="handle"/>
+                                            <field name="name"/>
+                                            <field name="site_visits_id" optional="show"/>
+                                            <field name="id_number" optional="show"/>
+                                            <field name="mobile_number" optional="show"/>
+                                            <field name="nationality" optional="show"/>
+                                            <field name="visit_status" optional="show"/>
+                                            <field name="remark" optional="show"/>
+                                        </tree>
+                                    </field>
+                            </page>
+                            <page string="VEHICLE">
+                                <group>
+                                    <group>
+                                        <field name="vehicle_type" string="Vehicle Type"/>
+                                        <field name="plate_number" string="Plate Number"/>
+                                        <field filename="vehicle_file_filename" name="vehicle_file" string="Vehicle File"/>
+                                        <field invisible="1" name="vehicle_file_filename"/>
+                                    </group>
+                                </group>
+                            </page>
+                            <page string="DEVICES">
+                                <group>
+                                    <group>
+                                        <field name="device_type" string="Device Type"/>
+                                        <field name="device_brand" string="Device Brand"/>
+                                        <field name="serial_number" string="Serial Number"/>
+                                        <field filename="devices_file_filename" name="device_file" string="Devices File"/>
+                                        <field invisible="1" name="devices_file_filename"/>
+                                    </group>
+                                </group>
+                            </page>
+                        </notebook>
+
+                    </sheet>
+                    <div class="oe_chatter" name="oe_chatter">
+                        <field name="message_follower_ids"/>
+                        <field name="message_ids"/>
+                        <field name="activity_ids"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <!--        <record id="site_visits_tree_view" model="ir.ui.view">-->
+        <!--            <field name="name">Site Visits</field>-->
+        <!--            <field name="model">site.visits</field>-->
+        <!--            <field name="arch" type="xml">-->
+        <!--                <tree string="ModelTitle">-->
+        <!--                    <field name="create_date"/>-->
+        <!--                    <field name="example_field"/>-->
+        <!--                </tree>-->
+        <!--            </field>-->
+        <!--        </record>-->
+
+        <!--        <record id="site_visits_calendar_view" model="ir.ui.view">-->
+        <!--            <field name="name">Site Visits</field>-->
+        <!--            <field name="model">site.visits</field>-->
+        <!--            <field name="arch" type="xml">-->
+        <!--                <calendar string="ModelTitle" date_start="example_date_field" color="example_boolean_field">-->
+        <!--                    <field name="example_field"/>-->
+        <!--                    <field name="example_field" widget="monetary"/>-->
+        <!--                </calendar>-->
+        <!--            </field>-->
+        <!--        </record>-->
+
+        <!--        <record id="site_visits_graph_view" model="ir.ui.view">-->
+        <!--            <field name="name">ProjectName.site_visits.graph</field>-->
+        <!--            <field name="model">ProjectName.site_visits</field>-->
+        <!--            <field name="arch" type="xml">-->
+        <!--                <graph string="ModelTitle">-->
+        <!--                    <field name="example_field"/>-->
+        <!--                    <field name="example_field" type="measure"/>-->
+        <!--                </graph>-->
+        <!--            </field>-->
+        <!--        </record>-->
+
+        <!--        <record id="site_visits_kanban_view" model="ir.ui.view">-->
+        <!--            <field name="name">ProjectName.site_visits.kanban</field>-->
+        <!--            <field name="model">ProjectName.site_visits</field>-->
+        <!--            <field name="arch" type="xml">-->
+        <!--                <kanban>-->
+        <!--                    <field name="id"/>-->
+        <!--                    <field name="example_field"/>-->
+        <!--                    <templates>-->
+        <!--                        <t t-name="kanban-box">-->
+        <!--                            <div class="oe_kanban_global_click o_res_partner_kanban">-->
+        <!--                                <div class="oe_kanban_details">-->
+        <!--                                    <strong class="o_kanban_record_title oe_partner_heading">-->
+        <!--                                        <field name="example_field"/>-->
+        <!--                                    </strong>-->
+        <!--                                </div>-->
+        <!--                            </div>-->
+        <!--                        </t>-->
+        <!--                    </templates>-->
+        <!--                </kanban>-->
+        <!--            </field>-->
+        <!--        </record>-->
+
+        <record id="site_visits_action" model="ir.actions.act_window">
+            <field name="name">Site Visits</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">site.visits</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    There is no examples click here to add new Site Visits.
+                </p>
+            </field>
+        </record>
+
+
+
+        <menuitem name="Master List Site Visits"
+                  id="site_visits_menu"
+                  parent="configuration_menu"
+                  sequence="60"
+                  action="site_visits_action"/>
+
+    </data>
+</odoo>

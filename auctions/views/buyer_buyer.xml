@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <record id="buyer_buyer_view_form" model="ir.ui.view">
+        <field name="name">Interested Buyers</field>
+        <field name="model">buyer.buyer</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <!--                    <field name="x_studio_stage_id" widget="statusbar" options="{'clickable': '1'}" modifiers="{&quot;required&quot;: true}" can_create="true" can_write="true"/>-->
+                </header>
+                <sheet string="Interested Buyers">
+                    <!--                    <div name="button_box" class="oe_button_box">-->
+                    <!--                        <button class="oe_stat_button" icon="fa-calendar" type="action" name="1516">-->
+                    <!--                            <field widget="statinfo" name="x_x_studio_many2one_field_PAtqg_x_site_visits_count" string="SITE VISITS"/>-->
+                    <!--                        </button>-->
+                    <!--                    </div>-->
+                    <field name="state" widget="state_selection"/>
+                    <!--                    <widget name="web_ribbon" text="Archived" bg_color="bg-danger" modifiers="{&quot;invisible&quot;: [[&quot;x_active&quot;, &quot;=&quot;, true]]}"/>-->
+                    <!--                    <field name="x_active" modifiers="{&quot;invisible&quot;: true}"/>-->
+                    <!--                    <field class="oe_avatar" widget="image" name="x_studio_image" modifiers="{&quot;invisible&quot;: true}"/>-->
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" placeholder="Name..." string="Buyer Name"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group string="BUYER INFORMATION">
+                            <!--                            <field name="x_studio_an" string="AN" modifiers="{&quot;invisible&quot;: true, &quot;readonly&quot;: true}"/>-->
+                            <!--                            <field name="x_studio_user_id" widget="many2one_avatar_user" string="Sales Focal Point" modifiers="{&quot;invisible&quot;: true}" can_create="true" can_write="true"/><field name="x_studio_buyerdb" options="{&quot;no_create&quot;:true}" string="Buyer" on_change="1" modifiers="{&quot;required&quot;: true}" can_create="true" can_write="true"/>-->
+                            <field name="buyer"/>
+                            <field name="participated"/>
+                            <field name="technical_evaluation"/>
+                        </group>
+
+                        <!--                            <field name="x_studio_company_id" options="{'no_create': Tr
+                        https://meet.google.com/keq-kkqc-zerue}" modifiers="{&quot;invisible&quot;: true}" can_create="true" can_write="true"/></group>-->
+                        <group string="PROJECT INFORMATION ">
+                            <field name="auctions_id"/>
+                            <field name="technical_focal_point"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="INFORMATION" >
+                            <group>
+                                <group string="GENERAL INFORMATION">
+                                    <field name="priority" string="Priority"/>
+                                    <field name="meeting_status" string="Meeting Status"/>
+                                    <field name="category" string="Category"/>
+                                    <field name="re_usescrap" string="Re-Use/Scrap"/>
+                                    <field name="location" string="Location"/>
+                                    <!--                                    <field name="x_studio_many2one_field_IqHDf" modifiers="{&quot;invisible&quot;: true}" can_create="true" can_write="true"/>-->
+                                </group>
+                            </group>
+                            <!--                                <group name="studio_group_BJnRH_right">-->
+                            <!--                                    <field name="x_studio_partner_id" string="Buyer" on_change="1" modifiers="{&quot;invisible&quot;: true}" can_create="true" can_write="true"/><field name="x_studio_mobile" string="Mobile" modifiers="{&quot;invisible&quot;: true, &quot;readonly&quot;: true}"/>-->
+                            <!--                                    <field name="x_studio_partner_phone" widget="phone" options="{'enable_sms': True}" modifiers="{&quot;invisible&quot;: true}"/><field name="x_studio_partner_email" widget="email" modifiers="{&quot;invisible&quot;: true}"/><field name="x_studio_website" string="Website" widget="url" modifiers="{&quot;invisible&quot;: true, &quot;readonly&quot;: true}"/></group>-->
+                            <!--                            </group>-->
+                        </page>
+                        <!--                        <page string="SITE VISITING" name="studio_page_mIShI" modifiers="{&quot;invisible&quot;: true}">-->
+                        <!--                            <group name="studio_group_mIShI">-->
+                        <!--                            </group>-->
+                        <!--                        </page>-->
+                    </notebook>
+                    <group string="Remark">
+                        <field name="remark" placeholder="Type down your notes here..." nolabel="1" colspan="2"/>
+                    </group>
+                </sheet>
+                <div class="oe_chatter" name="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="message_ids"/>
+                    <field name="activity_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="buyer_buyer_view_tree" model="ir.ui.view">
+        <field name="name">Interested Buyers</field>
+        <field name="model">buyer.buyer</field>
+        <field name="arch" type="xml">
+            <tree string="Interested Buyers">
+                <field name="buyer" optional="show"/>
+                <field name="participated" optional="show"/>
+                <field name="technical_evaluation" optional="show"/>
+                <field name="location" optional="show"/>
+                <field name="sale_focal_point" optional="show"/>
+                <field name="priority" optional="show"/>
+                <field name="meeting_status" optional="show"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="buyer_buyer_action" model="ir.actions.act_window">
+        <field name="name">Interested Buyers</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">buyer.buyer</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="Interested Buyers" id="buyer_menu"
+              parent="database_menu"
+              sequence="20"
+              action="buyer_buyer_action"/>
+</odoo>

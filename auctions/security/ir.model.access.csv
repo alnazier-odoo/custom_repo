@@ -1,0 +1,16 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_auctions_app,auctions.app,model_auctions_app,,1,1,1,1
+access_buyer_database,buyer.database,model_buyer_database,,1,1,1,1
+access_buyer_database_line,buyer.database.line,model_buyer_database_line,,1,1,1,1
+access_buyer_buyer,buyer.buyer,model_buyer_buyer,,1,1,1,1
+access_sales_focal_point,sales.focal.point,model_sales_focal_point,,1,1,1,1
+access_technical_focal_point,technical.focal.point,model_technical_focal_point,,1,1,1,1
+access_auctions_stages,auctions.stages,model_auctions_stages,,1,1,1,1
+access_buyer_stages,buyer.stages,model_buyer_stages,,1,1,1,1
+access_visits_stages,visits.stages,model_visits_stages,,1,1,1,1
+access_visits_status,visits.status,model_visits_status,,1,1,1,1
+access_site_visits,site.visits,model_site_visits,,1,1,1,1
+access_site_visits_line,site.visits.line,model_site_visits_line,,1,1,1,1
+
+
+

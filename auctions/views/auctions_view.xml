@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="auctions_app_form_view" model="ir.ui.view">
+            <field name="name">auctions.app.form</field>
+            <field name="model">auctions.app</field>
+            <field name="arch" type="xml">
+                <form string="Auctions">
+                    <header>
+                        <field name="stage_id" widget="statusbar" options="{'clickable': '1'}"/>
+                    </header>
+                    <sheet>
+                        <div name="button_box" class="oe_button_box">
+                            <button class="oe_stat_button" icon="fa-circle" type="object" name="buyer_count_action">
+                                <field widget="statinfo" name="buyer_count" string="BUYERS"/>
+                            </button>
+                            <!--<button class="oe_stat_button" icon="fa-calendar" type="action" name="1514">
+                              <field widget="statinfo" name="x_x_studio_many2one_field_LrUGB_x_site_visits_count" string="SITE VISITS"/>
+                            </button>-->
+                            <!--                            <button class="oe_stat_button" icon="fa-calendar" type="action" name="1519">-->
+                            <!--                                <field widget="statinfo" name="x_x_studio_many2one_field_LrUGB_x_site_visits_count" string="SITE VISITS"/>-->
+                            <!--                            </button>-->
+                        </div>
+                        <field name="kanban_state" widget="state_selection" invisible="1"/>
+                        <!--                        <widget name="web_ribbon" text="Archived" bg_color="bg-danger" attrs="{'invisible': [('active' , '=', true)]}"/>-->
+                        <field name="active"  invisible="1"/>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="name" placeholder="Name..."/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group string="AUCTION INFORMATION">
+                                <field name="plant_location"/>
+                                <field name="brief_description"/>
+                            </group>
+                            <group string="AUCTION OWNER CONTACT">
+                                <field name="partner_id" string="Owner" on_change="1" can_create="true" can_write="true"/>
+                                <field name="phone" widget="phone" options="{'enable_sms': True}"/>
+                                <field name="partner_email" widget="email"/>
+                            </group>
+                            <field name="buyer_id" string="Buyer/Auction" invisible="1"/>
+
+                        </group>
+                        <group>
+                            <group string="DATES">
+                                <field name="last_day_for_site_visits"/>
+                                <field name="last_day_to_submit_bids"/>
+                                <field name="bids_open_date"/>
+                                <field name="announce_bids_results" />
+                            </group>
+                            <group name="studio_group_YbNvA_right" string="AUCTION ORGANIZER">
+                                <field name="user_id" widget="many2one_avatar_user" invisible="1" can_create="true" can_write="true"/>
+                                <field name="company_id" options="{'no_create': True}" on_change="1" required="1" can_create="true" can_write="true"/>
+                                <field name="company_stamp" string="Company Stamp" invisible="1" readonly="1"/>
+                                <field name="employee_signature" string="Employee Signature" invisible="1" readonly="1"/>
+                            </group>
+                        </group>
+                        <group>
+                            <group string="OTHER">
+                                <field name="attachment"/>
+                                <field name="attachment_filename" invisible="1"/>
+                                <field name="notes" placeholder="Type down your notes here..." nolabel="1" colspan="2"/>
+                            </group>
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids"/>
+                        <field name="message_ids"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+        <record id="auction_view_tree" model="ir.ui.view">
+            <field name="name">Auction</field>
+            <field name="model">auctions.app</field>
+            <field name="arch" type="xml">
+                <tree string="Auction">
+                    <field name="name"/>
+                    <field name="partner_id"/>
+                    <field name="user_id" widget="many2one_avatar_user"/>
+                    <field name="company_id"/>
+                    <field name="color" widget="color_picker"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="auctions_app_act_window" model="ir.actions.act_window">
+            <field name="name">Auctions</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">auctions.app</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    There is no examples click here to add new Auctions.
+                </p>
+            </field>
+        </record>
+
+        <menuitem name="Auctions" id="auctions_app_root_menu"/>
+
+        <menuitem name="Auctions" id="auctions_menu"
+                  parent="auctions_app_root_menu"
+                  action="auctions_app_act_window"/>
+
+        <menuitem name="Configuration" id="configuration_menu"
+                  parent="auctions_app_root_menu"/>
+
+        <menuitem name="Database" id="database_menu"
+                  sequence="10"
+                  parent="configuration_menu"/>
+
+        <menuitem name="Focal Point" id="focal_point_menu"
+                  sequence="20"
+                  parent="configuration_menu"/>
+
+        <menuitem name="Stage" id="stage_menu"
+                  sequence="30"
+                  parent="configuration_menu"/>
+
+        <menuitem name="ID Type" id="id_type_menu"
+                  sequence="40"
+                  parent="configuration_menu"/>
+
+    </data>
+</odoo>

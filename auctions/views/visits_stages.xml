@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="visits_stages_tree_view" model="ir.ui.view">
+            <field name="name">Visits Stages</field>
+            <field name="model">visits.stages</field>
+            <field name="arch" type="xml">
+                <tree string="Visits Stages" editable="bottom">
+                    <field name="sequence" widget="handle"/>
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="visits_stages_act_window" model="ir.actions.act_window">
+            <field name="name">Site Visits Stages</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">visits.stages</field>
+            <field name="view_mode">tree</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    There is no examples click here to add new Site Visits Stage.
+                </p>
+            </field>
+        </record>
+
+        <menuitem name="Site Visits Stages" id="VisitsStages_menu"
+                  parent="stage_menu"
+                  sequence="30"
+                  action="visits_stages_act_window"/>
+    </data>
+</odoo>

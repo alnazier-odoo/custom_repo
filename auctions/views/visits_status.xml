@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="visits_status_form_view" model="ir.ui.view">
+            <field name="name">Visits Status</field>
+            <field name="model">visits.status</field>
+            <field name="arch" type="xml">
+                <form string="Visits Status">
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="name" placeholder="Name..."/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                                <field name="active" widget="boolean_toggle"/>
+                            </group>
+                            <group>
+                                <field name="status_color" widget="color_picker"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="visits_status_tree_view" model="ir.ui.view">
+            <field name="name">Visits Status</field>
+            <field name="model">visits.status</field>
+            <field name="arch" type="xml">
+                <tree string="ModelTitle">
+                    <field name="name"/>
+                    <field name="status_color"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="visits_status_act_window" model="ir.actions.act_window">
+            <field name="name">Visits Status</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">visits.status</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    There is no examples click here to add new Visits Status.
+                </p>
+            </field>
+        </record>
+
+        <menuitem name="Visits Status"
+                  id="Visits_Status_menu"
+                  parent="configuration_menu"
+                  sequence="70"
+                  action="visits_status_act_window"/>
+    </data>
+</odoo>

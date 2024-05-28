@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="buyer_database_form_view" model="ir.ui.view">
+            <field name="name">buyer.database.form</field>
+            <field name="model">buyer.database</field>
+            <field name="arch" type="xml">
+                <form string="Buyer Database">
+                    <sheet>
+                        <!--                        <field name="x_studio_kanban_state" widget="state_selection"/>-->
+                        <!--                        <widget name="web_ribbon" text="Archived" bg_color="bg-danger" attrs="{'invisible': [('x_active', '=', True)]}"/>-->
+                        <!--                        <field name="x_active" invisible="1"/>-->
+                        <div class="oe_title">
+                            <h1>
+                                <field name="name" required="1" placeholder="Name..."/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="partner_id"/>
+                                <field name="phone" widget="phone" options="{'enable_sms': True}"/>
+                                <field name="partner_email" widget="email"/>
+                            </group>
+                            <group>
+                                <field name="user_id" widget="many2one_avatar_user"/>
+                                <field name="company_id"/>
+                            </group>
+                        </group>
+                        <group>
+                            <field name="note" placeholder="Type down your notes here..." nolabel="1" colspan="2"/>
+                        </group>
+                        <group>
+                            <field name="participation_auctions_ids" string="Participation in the Auctions">
+                                <tree>
+                                    <field name="sequence" widget="handle"/>
+                                    <field name="buyer_id" optional="show"/>
+                                    <field name="interested" optional="show"/>
+                                    <field name="participated" optional="show"/>
+                                    <field name="called" optional="show"/>
+                                    <field name="remark" optional="show"/>
+                                    <field name="name" />
+                                </tree>
+                            </field>
+                        </group>
+                    </sheet>
+<!--                    <div class="oe_chatter">-->
+<!--                        <field name="message_follower_ids"/>-->
+<!--                        <field name="message_ids"/>-->
+<!--                    </div>-->
+                </form>
+            </field>
+        </record>
+
+        <record id="buyer_database_tree_view" model="ir.ui.view">
+            <field name="name">buyer.database.tree</field>
+            <field name="model">buyer.database</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <!--                    <field name="x_studio_sequence" widget="handle"/>-->
+                    <field name="name"/>
+                    <field name="partner_id"/>
+                    <field name="company_id"/>
+                </tree>
+            </field>
+        </record>
+
+
+
+
+        <record id="buyer_database_act_window" model="ir.actions.act_window">
+            <field name="name">Buyer Database</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">buyer.database</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    There is no examples click here to add new ModelTitle.
+                </p>
+            </field>
+        </record>
+
+        <menuitem name="Buyer Database" id="BuyerDatabase_menu"
+                  parent="database_menu"
+                  sequence="10"
+                  action="buyer_database_act_window"/>
+
+    </data>
+</odoo>
